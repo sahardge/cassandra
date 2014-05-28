@@ -29,8 +29,8 @@ echo "Installing Titan ${VERSION}..."
   #sudo chmod a+x bin/rexster.sh
   #./bin/titan.sh start
   #start titan
-  ./bin/gremlin.sh start
-  ./bin/rexster.sh --start
-  echo "Titan has been started."
-  echo "Rexster Web Server has been started."
+  #./bin/gremlin.sh start
+  #./bin/rexster.sh --start
+  #echo "Titan has been started."
+  #echo "Rexster Web Server has been started."
 fi
