@@ -24,9 +24,13 @@ echo "Installing Titan ${VERSION}..."
   #mv conf/rexster-cassandra.xml conf/rexster-cassandra-es.xml.orig
   #cat conf/rexster-cassandra.xml.orig | sed -e "/<base-uri>/s/localhost/""$IP""/" > conf/rexster-cassandra-es.xml
   #bump rexster heap size
-  cp bin/rexster.sh bin/rexster.sh.orig
-  sudo bash -c 'cat bin/rexster.sh.orig | sed -e "/-server/s/-Xms128m -Xmx512m/-Xms128m -Xmx2048m -XX:MaxPermSize=256m/" > bin/rexster.sh'
-  sudo chmod a+x bin/rexster.sh
-  ./bin/titan.sh start
+  #cp bin/rexster.sh bin/rexster.sh.orig
+  #sudo bash -c 'cat bin/rexster.sh.orig | sed -e "/-server/s/-Xms128m -Xmx512m/-Xms128m -Xmx2048m -XX:MaxPermSize=256m/" > bin/rexster.sh'
+  #sudo chmod a+x bin/rexster.sh
+  #./bin/titan.sh start
+  #start titan
+  ./bin/gremlin.sh start
+  ./bin/rexster.sh --start
   echo "Titan has been started."
+  echo "Rexster Web Server has been started."
 fi
