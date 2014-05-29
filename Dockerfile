@@ -6,7 +6,7 @@ RUN wget -q http://tinkerpop.com/downloads/rexster/rexster-server-2.5.0.zip && u
 RUN mv /tmp/rexster/rexster-server-2.5.0/ /rexster-server
  #set rexster/doghouse address
 RUN mv /rexster-server/config/rexster.xml /rexster-server/config/rexster.xml.orig
-RUN cat /rexster-server/config/rexster.xml.orig | sed -e "/<base-uri>/s/localhost/""10.0.2.15""/" 	  > /rexster-server/config/rexster.xml
+RUN cat /rexster-server/config/rexster.xml.orig | sed -e "/<base-uri>/s/localhost/""172.17.42.1""/" 	  > /rexster-server/config/rexster.xml
   #bump rexster heap size
 #RUN cp bin/rexster.sh bin/rexster.sh.orig
 #RUN sudo bash -c 'cat bin/rexster.sh.orig | sed -e "/-server/s/-Xms128m -Xmx512m/-Xms128m -Xmx2048m -XX:MaxPermSize=256m/" > bin/rexster.sh'
