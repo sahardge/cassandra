@@ -5,6 +5,12 @@ FROM dockerfile/java
 RUN wget -q http://tinkerpop.com/downloads/rexster/rexster-server-2.5.0.zip
 RUN unzip rexster-server-2.5.0.zip -d /tmp/rexster
 RUN mv /tmp/rexster/rexster-server-2.5.0/ /rexster-server
+ #set rexster/doghouse address
+RUN mv config/rexster.xml conf/rexster.xml.orig
+RUN cat conf/rexster.orig | sed -e "/<base-uri>/s/localhost/""$IP""/" 	  > conf/rexster.xml
+  #bump rexster heap size
+RUN cp bin/rexster.sh bin/rexster.sh.orig
+RUN sudo bash -c 'cat bin/rexster.sh.orig | sed -e "/-server/s/-Xms128m -Xmx512m/-Xms128m -Xmx2048m -XX:MaxPermSize=256m/" > bin/rexster.sh'
 
 # Get rexster console
 RUN wget -q http://tinkerpop.com/downloads/rexster/rexster-console-2.5.0.zip
