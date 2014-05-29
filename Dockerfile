@@ -8,8 +8,8 @@ RUN mv /tmp/rexster/rexster-server-2.5.0/ /rexster-server
 RUN mv /rexster-server/config/rexster.xml /rexster-server/config/rexster.xml.orig
 RUN cat /rexster-server/config/rexster.xml.orig | sed -e "/<base-uri>/s/localhost/""10.10.10.101""/" 	  > /rexster-server/config/rexster.xml
   #bump rexster heap size
-RUN cp bin/rexster.sh bin/rexster.sh.orig
-RUN sudo bash -c 'cat bin/rexster.sh.orig | sed -e "/-server/s/-Xms128m -Xmx512m/-Xms128m -Xmx2048m -XX:MaxPermSize=256m/" > bin/rexster.sh'
+#RUN cp bin/rexster.sh bin/rexster.sh.orig
+#RUN sudo bash -c 'cat bin/rexster.sh.orig | sed -e "/-server/s/-Xms128m -Xmx512m/-Xms128m -Xmx2048m -XX:MaxPermSize=256m/" > bin/rexster.sh'
 
 # Get rexster console
 #RUN wget -q http://tinkerpop.com/downloads/rexster/rexster-console-2.5.0.zip
