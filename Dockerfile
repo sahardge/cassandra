@@ -2,8 +2,7 @@
 FROM dockerfile/java
  
 # Get rexster server
-RUN wget -q http://tinkerpop.com/downloads/rexster/rexster-server-2.5.0.zip
-RUN unzip rexster-server-2.5.0.zip -d /tmp/rexster
+RUN wget -q http://tinkerpop.com/downloads/rexster/rexster-server-2.5.0.zip && unzip rexster-server-2.5.0.zip -d /tmp/rexster
 RUN mv /tmp/rexster/rexster-server-2.5.0/ /rexster-server
  #set rexster/doghouse address
 RUN mv config/rexster.xml conf/rexster.xml.orig
@@ -14,6 +13,7 @@ RUN sudo bash -c 'cat bin/rexster.sh.orig | sed -e "/-server/s/-Xms128m -Xmx512m
 
 # Get rexster console
 RUN wget -q http://tinkerpop.com/downloads/rexster/rexster-console-2.5.0.zip
+RUN ls
 RUN unzip rexster-console-2.5.0.zip -d /tmp/rexster
 RUN mv /tmp/rexster/rexster-console-2.5.0/ /rexster-console
 
