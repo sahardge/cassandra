@@ -11,12 +11,12 @@ cd rexster
 mvn clean install
 mkdir -p ${REXSTERHOME}/rexster-server/ext/titan
 cd ${REXSTERHOME}
-mv /rexster-server/config/rexster.xml /rexster-server/config/rexster.xml.orig
-cat /rexster-server/config/rexster.xml.orig | sed -e "/<base-uri>/s/localhost/""$IP""/" > /rexster-server/config/rexster.xml
+mv rexster-server/config/rexster.xml rexster-server/config/rexster.xml.orig
+cat rexster-server/config/rexster.xml.orig | sed -e "/<base-uri>/s/localhost/""$IP""/" > rexster-server/config/rexster.xml
 #bump rexster heap size
-cp /rexster-server/bin/rexster.sh /rexster-server/bin/rexster.sh.orig
-sudo bash -c 'cat /rexster-server/bin/rexster.sh.orig | sed -e "/-server/s/-Xms128m -Xmx512m/-Xms128m -Xmx2048m -XX:MaxPermSize=256m/" > /rexster-server/bin/rexster.sh'
-sudo chmod a+x /rexster-server/bin/rexster.sh
+cp rexster-server/bin/rexster.sh rexster-server/bin/rexster.sh.orig
+sudo bash -c 'cat rexster-server/bin/rexster.sh.orig | sed -e "/-server/s/-Xms128m -Xmx512m/-Xms128m -Xmx2048m -XX:MaxPermSize=256m/" > rexster-server/bin/rexster.sh'
+sudo chmod a+x rexster-server/bin/rexster.sh
 
 # Install [Titan](http://thinkaurelius.github.io/titan/)
 
