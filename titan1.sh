@@ -9,7 +9,7 @@ echo "Installing Rexster..."
 git clone https://github.com/tinkerpop/rexster.git
 cd rexster
 mvn clean install
-mkdir ${REXSTERHOME}/ext/titan
+mkdir ${REXSTERHOME}/rexster-server/ext/titan
 cd ${REXSTERHOME}
 mv /rexster-server/config/rexster.xml /rexster-server/config/rexster.xml.orig
 cat /rexster-server/config/rexster.xml.orig | sed -e "/<base-uri>/s/localhost/""$IP""/" > /rexster-server/config/rexster.xml
@@ -30,5 +30,5 @@ echo "Installing Titan ${VERSION}..."
   echo "Titan has been installed."
   cd ${TITAN}
   cp ${TITAN}/lib/*.* ${REXSTERHOME}/ext/titan
-  cp -r /local/git/cassandra/lib ${REXSTERHOME}/ext/titan
+  cp -r /local/git/cassandra/lib ${REXSTERHOME}/rexster-server/ext/titan
 fi
