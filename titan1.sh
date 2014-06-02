@@ -1,7 +1,7 @@
 # Argument is the version to install, or default value
 VERSION=${1:-'0.4.2'}
 IP=${2:-'10.10.10.100'}
-BACKEND=server#"server" includes rextser, cassandra, and all other backend/indexing support
+BACKEND=cassandra#"server" includes rextser, cassandra, and all other backend/indexing support
 TITAN=titan-${BACKEND}-${VERSION}
 REXSTERHOME=/local/git/cassandra/rexster
 
