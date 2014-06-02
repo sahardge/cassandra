@@ -9,8 +9,7 @@ echo "Installing Rexster..."
 git clone https://github.com/tinkerpop/rexster.git
 cd rexster
 mvn clean install
-cd /
-mkdir ${REXSTERHOME}/rexster-server/ext/titan
+mkdir -p ${REXSTERHOME}/rexster-server/ext/titan
 cd ${REXSTERHOME}
 mv /rexster-server/config/rexster.xml /rexster-server/config/rexster.xml.orig
 cat /rexster-server/config/rexster.xml.orig | sed -e "/<base-uri>/s/localhost/""$IP""/" > /rexster-server/config/rexster.xml
