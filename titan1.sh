@@ -29,6 +29,5 @@ echo "Installing Titan ${VERSION}..."
   rm -f ${FILE}
   echo "Titan has been installed."
   cd ${TITAN}
-  cp ${TITAN}/lib/*.* ${REXSTERHOME}/ext/titan
   cp -r /local/git/cassandra/lib ${REXSTERHOME}/rexster-server/ext/titan
 fi
