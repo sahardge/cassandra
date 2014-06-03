@@ -11,7 +11,7 @@
     RUN \
       git clone https://github.com/sahardge/cassandra.git && \
       cd cassandra && \
-      bash titan1.sh 
+      bash install.sh 
       
      
      
