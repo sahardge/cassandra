@@ -17,5 +17,5 @@ echo "Installing Cassandra 1.2 branch..."
   echo "Cassandra has been installed."
   echo "Making appropriate configuration changes."
   mv /etc/cassandra/cassandra.yaml /etc/cassandra/cassandra.yaml.orig 
-  cat /etc/cassandra/cassandra.yaml.orig | sed -e "112,197 s|/var/lib|/mountedvol|g" | sed -e "329, s/listen_address/""$IP""> /etc/cassandra/cassandra.yaml
+  cat /etc/cassandra/cassandra.yaml.orig | sed -e "112,197 s|/var/lib|/mountedvol|g" | sed -e "329, s/listen_address/""$IP""/"> /etc/cassandra/cassandra.yaml
 fi
