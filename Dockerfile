@@ -11,7 +11,7 @@ WORKDIR /usr/sbin
 
 EXPOSE 9160 9142 7000 7001
 
-VOLUME ["~/mountedvol"]
+VOLUME ["/var/mountedvol"]
 
 # Define default command.
 CMD ["bash"]
