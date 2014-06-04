@@ -8,5 +8,7 @@ RUN cd cassandra && bash titan1.sh
 ENV NODE_ENV production 
 
 WORKDIR /local/git/cassandra/rexster/rexster-server
+
+EXPOSE 8182, 8183, 8184
 # Define default command.
 CMD ["bash"]
