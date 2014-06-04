@@ -4,12 +4,12 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN git clone https://github.com/sahardge/cassandra.git
 RUN cd cassandra && bash install.sh
-mkdir /mountedvol         
+RUN mkdir /mountedvol         
 
 
-WORKDIR /local/git/cassandra/rexster/rexster-server
+WORKDIR /usr/sbin
 
-EXPOSE 8182 8183 8184
+EXPOSE 9160 9142 7000 7001
 
 VOLUME ["~/mountedvol"]
 
