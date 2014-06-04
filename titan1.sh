@@ -12,7 +12,7 @@ cd /rexster
 mkdir -p ${REXSTERHOME}/ext/titan
 cd ${REXSTERHOME}
 mv config/rexster.xml config/rexster.xml.orig
-cat config/rexster.xml.orig | sed -e "/<base-uri>/s/localhost/""$IP""/" > config/rexster.xml
+cat config/rexster.xml.orig | sed -e "/<base-uri>/s/localhost/172.17.0.3/" > config/rexster.xml
 #bump rexster heap size
 cp bin/rexster.sh bin/rexster.sh.orig
 sudo bash -c 'cat bin/rexster.sh.orig | sed -e "/-server/s/-Xms128m -Xmx512m/-Xms128m -Xmx2048m -XX:MaxPermSize=256m/" > bin/rexster.sh'
