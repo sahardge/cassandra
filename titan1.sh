@@ -11,7 +11,7 @@ mv /tmp/rexster/rexster-server-2.5.0/ /rexster
 cd /rexster
 mkdir -p ${REXSTERHOME}/ext/titan
 cd ${REXSTERHOME}
-mv rexster.xml config/rexster.xml.orig
+mv config/rexster.xml config/rexster.xml.orig
 cat config/rexster.xml.orig | sed -e "/<base-uri>/s/localhost/""$IP""/" > config/rexster.xml
 #bump rexster heap size
 cp bin/rexster.sh bin/rexster.sh.orig
