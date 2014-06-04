@@ -11,7 +11,7 @@ WORKDIR /local/git/cassandra/rexster/rexster-server
 
 EXPOSE 8182 8183 8184
 
-VOLUME ["/mountedvol"]
+VOLUME ["~/mountedvol"]
 
 # Define default command.
 CMD ["bash"]
