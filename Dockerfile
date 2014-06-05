@@ -7,7 +7,7 @@ RUN cd cassandra && bash install.sh
 RUN mkdir /mountedvol     
 
 # Deploy startup script
-ADD start.sh /usr/local/bin/start
+ADD start.sh /usr/sbin
 
 
 WORKDIR /usr/sbin
