@@ -30,4 +30,5 @@ echo "Installing Titan ${VERSION}..."
   echo "Titan has been installed."
   cd ${TITAN}
   cp -r /local/git/cassandra/lib ${REXSTERHOME}/ext/titan
+  cp -r /usr/local/${TITAN}/
 fi
