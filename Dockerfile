@@ -4,7 +4,10 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN git clone https://github.com/sahardge/cassandra.git
 RUN cd cassandra && bash install.sh
-RUN mkdir /mountedvol      
+RUN mkdir /mountedvol     
+
+# Deploy startup script
+ADD start.sh /usr/local/bin/start
 
 
 WORKDIR /usr/sbin
