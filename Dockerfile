@@ -10,10 +10,8 @@ RUN mkdir /mountedvol
 #ADD start.sh /usr/sbin
 
 
-WORKDIR /usr/sbin
+WORKDIR /local/git/cassandra
 
 EXPOSE 9160 9142 7000 7001
 
 
-# Define default command.
-CMD ["start"]
