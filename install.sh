@@ -19,5 +19,6 @@ echo "Installing Cassandra 1.2 branch..."
   mv /etc/cassandra/cassandra.yaml /etc/cassandra/cassandra.yaml.orig 
   cat /etc/cassandra/cassandra.yaml.orig | sed -e "112,197 s|/var/lib|/mountedvol|g" > /etc/cassandra/cassandra.yaml
   #| sed -e "329 s/localhost/172.17.0.2/" | sed -e "365 s/localhost/172.17.0.2/" | sed -e "238 s/127.0.0.1/172.17.0.2/" 
+  cp start.sh /usr/sbin
   
 fi
