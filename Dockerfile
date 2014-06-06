@@ -12,6 +12,6 @@ RUN mkdir /mountedvol
 
 WORKDIR /rexster
 
-EXPOSE 9160 9142 7000 7001
+EXPOSE 8182 8183 8184
 
 
