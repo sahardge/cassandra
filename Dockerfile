@@ -10,10 +10,10 @@ RUN mkdir /mountedvol
 #ADD start.sh /usr/sbin
 
 
-WORKDIR /usr
+WORKDIR /usr/sbin
 
 EXPOSE 9160 9142 7000 7001
 
 
 # Define default command.
-CMD ["bash"]
+CMD ["start"]
