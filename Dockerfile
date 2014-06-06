@@ -10,7 +10,7 @@ RUN mkdir /mountedvol
 #ADD start.sh /usr/sbin
 
 
-WORKDIR /usr/sbin
+WORKDIR /usr
 
 EXPOSE 9160 9142 7000 7001
 
