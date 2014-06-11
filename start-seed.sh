@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 IP=`hostname --ip-address`
-if [ $# == 1 ]; then SEEDS="$1,$IP";
-else SEEDS="$IP"; fi
+SEEDS=/bin/etcdctl get /seed
+
 
 echo Configuring Cassandra to listen at $IP with seeds $SEEDS
 
