@@ -21,5 +21,5 @@ echo "Installing Cassandra 1.2 branch..."
   #| sed -e "329 s/localhost/""$IP""/" | sed -e "365 s/localhost/""$IP""/" | sed -e "238 s/127.0.0.1/""$IP""/" 
   cp start-seed.sh /usr/sbin
   cp start-node.sh /usr/sbin
-  
+  cp inspect.sh /usr/sbin
 fi
