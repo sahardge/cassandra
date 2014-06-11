@@ -4,7 +4,7 @@ IP=`hostname --ip-address`
 
 
 
-echo Configuring Cassandra to listen at $IP with seeds $SEEDS
+echo Bringing up Cassandra cluster seed $IP 
 
 # Setup Cassandra
 
