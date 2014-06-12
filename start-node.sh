@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 IP=`hostname --ip-address`
-SEEDS=/bin/etcdctl --peers 10.1.42.1 get /seed
+SEEDS=/bin/etcdctl --peers 10.1.42.1:4001 get /seed
 
 
 echo Configuring Cassandra to listen at $IP with seeds $SEEDS
