@@ -2,7 +2,7 @@
 
 IP=`hostname --ip-address`
 
-
+/bin/etcdctl --peers 10.1.42.1 set /seed $IP
 
 echo Bringing up Cassandra cluster seed $IP 
 
