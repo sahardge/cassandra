@@ -13,6 +13,6 @@ ENV PATH /usr/local/go/bin:$PATH
 RUN mkdir /mountedvol     
 
 
-EXPOSE 9160 9142 7000 7001
+EXPOSE 9160 9142 7000 7001 4001
 
 
