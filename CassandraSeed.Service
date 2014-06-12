@@ -1,0 +1,14 @@
+[Unit]
+Description=Cassandra Seed
+After=etcd.service
+After=docker.service
+
+
+[Service]
+EnvironmentFile=/etc/environment
+TimeoutStartSec=0
+ExecStart= /usr/bin/docker run -d --name seed cassimg bash /usr/sbin/start-seed.sh
+ExecStartPost= /bin/sleep 5 ;\
+               /bin/bash ./home/core/cassandra/inspect.sh
+
+
