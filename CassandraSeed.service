@@ -9,7 +9,5 @@ TimeoutStartSec=0
 ExecStartPre= /usr/bin/docker pull sahardge/cassandra
 ExecStartPre= /usr/bin/docker rm -f seed
 ExecStart= /usr/bin/docker run -d --name seed sahardge/cassandra bash /usr/sbin/start-seed.sh
-ExecStartPost= /bin/sleep 5 ;\
-               /bin/etcdctl set /seed '$(/usr/bin/docker inspect --format '{{ .NetworkSettings.IPAddress }}' seed)'
 
 
