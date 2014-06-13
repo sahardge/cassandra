@@ -5,8 +5,8 @@ After=docker.service
 
 
 [Service]
-EnvironmentFile=/etc/environment
 TimeoutStartSec=0
+ExecStartPre= /usr/bin/docker pull sahardge/cassandra
 ExecStart= /usr/bin/docker run -d --name seed cassimg bash /usr/sbin/start-seed.sh
 ExecStartPost= /bin/sleep 5 ;\
                /bin/etcdctl set /seed '$(/usr/bin/docker inspect --format '{{ .NetworkSettings.IPAddress }}' seed)'
