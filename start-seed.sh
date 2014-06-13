@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-IP=`hostname --ip-address`
+IP="$(/usr/bin/etcdctl --peers 10.1.42.1:4001 get /seed)"
 
-/usr/bin/etcdctl --peers 10.1.42.1:4001 set /seed "$IP"
+
+
 
 echo Bringing up Cassandra cluster seed $IP 
 
