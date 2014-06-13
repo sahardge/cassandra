@@ -9,6 +9,6 @@ TimeoutStartSec=0
 EnvironmentFile=/etc/environment
 RemainAfterExit=yes
 ExecStartPre= /usr/bin/docker pull sahardge/cassandra
-ExecStart= /bin/bash -c "/usr/bin/docker start --net=host seed || \
+ExecStart= /bin/bash -c "/usr/bin/docker start seed || \
            /usr/bin/docker run -d --name seed -p "$COREOS_PUBLIC_IPV4"::7000 sahardge/cassandra bash /usr/sbin/start-seed.sh"
 ExecStop= /usr/bin/docker stop -t 3 seed
