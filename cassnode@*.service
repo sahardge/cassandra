@@ -9,6 +9,6 @@ Requires=CassandraSeed.service
 TimeoutStartSec=0
 ExecStartPre= /usr/bin/docker pull sahardge/cassandra
 ExecStart= /bin/bash -c "/usr/bin/docker start -d %p-%i || \
-           /usr/bin/docker run -d --name %p-%i sahardge/cassandra start-node.sh
+           /usr/bin/docker run -d --name %p-%i sahardge/cassandra start-node.sh"
 ExecStop= /usr/bin/docker stop -t %p-%i
 
