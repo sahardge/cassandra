@@ -1,0 +1,13 @@
+[Unit]
+Description=Cassandra Node
+After=etcd.service
+After=docker.service
+Requires=CassandraSeed.service
+
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre= /usr/bin/docker pull sahardge/cassandra
+ExecStart= /usr/bin/docker run -d --name %p-%i cassimg start-node.sh
+ExecStop= /usr/bin/docker stop -t %p-%i
+
