@@ -10,6 +10,6 @@ EnvironmentFile=/etc/environment
 RemainAfterExit=yes
 ExectStartPre= /usr/bin/etcdctl set /seed "$COREOS_PUBLIC_IPV4"
 ExecStartPre= /usr/bin/docker pull sahardge/cassandra
-ExecStart= /bin/bash -c "/usr/bin/docker start -d --net=host seed || \
+ExecStart= /bin/bash -c "/usr/bin/docker start --net=host seed || \
            /usr/bin/docker run -d --net=host --name seed sahardge/cassandra bash /usr/sbin/start-seed.sh"
 ExecStop= /usr/bin/docker stop -t 3 seed
