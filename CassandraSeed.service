@@ -7,6 +7,6 @@ After=docker.service
 [Service]
 TimeoutStartSec=0
 ExecStartPre= /usr/bin/docker pull sahardge/cassandra
-ExecStart= /bin/bash -c "/usr/bin/docker start -d seed || \
-           /usr/bin/docker run -d --name seed sahardge/cassandra bash /usr/sbin/start-seed.sh"
+ExecStart= /bin/bash -c "/usr/bin/docker start -d --net=host seed || \
+           /usr/bin/docker run -d --net=host --name seed sahardge/cassandra bash /usr/sbin/start-seed.sh"
 ExecStop= /usr/bin/docker stop -t 3 seed
