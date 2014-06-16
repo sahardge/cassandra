@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-IP="$(/usr/bin/etcdctl --peers 10.1.42.1:4001 get /seed)"
+IP=`hostname --ip-address`
 
 
 
