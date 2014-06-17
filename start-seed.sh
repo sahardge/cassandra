@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 IP=`hostname --ip-address`
-
+/usr/bin/etcdctl set /seed "$IP"
 
 
 
