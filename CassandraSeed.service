@@ -1,6 +1,7 @@
 [Unit]
 Description=Cassandra Seed
 After=etcd.service
+Requires=docker.service
 After=docker.service
 
 
