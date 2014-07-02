@@ -1,9 +1,0 @@
-[Unit]
-After=etcd-amb-cass2.service
-
-[Service]
-ExecStart=/usr/bin/docker run -link etcd-amb-cass2.service:etcd -rm -name %n -p 127.0.0.1::7000 polvi/dynamic-etcd-amb cass-A 7000
-ExecStop=/usr/bin/docker stop -t 3 %n
-
-[X-Fleet]
-X-ConditionMachineOf=etcd-amb-cass2.service
