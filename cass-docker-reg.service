@@ -1,8 +1,0 @@
-[Unit]
-After=etcd-amb-cass.service
-
-[Service]
-ExecStart=/usr/bin/docker run -link etcd-amb-cass.service:etcd -v /var/run/docker.sock:/var/run/docker.sock -rm polvi/docker-register CassandraSeed.service 7000 cass-A
-
-[X-Fleet]
-X-ConditionMachineOf=CassandraSeed.service
