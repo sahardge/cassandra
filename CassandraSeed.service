@@ -11,10 +11,9 @@ EnvironmentFile=/etc/environment
 RemainAfterExit=yes
 ExecStartPre= /usr/bin/etcdctl set /seed "$COREOS_PUBLIC_IPV4"
 ExecStartPre= /usr/bin/docker pull 160.91.76.121:5000/cassandra
-ExecStart= /bin/bash -c "/usr/bin/docker start %p || \
-           /usr/bin/docker run -d --name %p 160.91.76.121:5000/cassandra bash /usr/sbin/start-seed.sh"
+ExecStart= /bin/bash -c '/usr/bin/docker start %p || \
+           /usr/bin/docker run -d --name %p 160.91.76.121:5000/cassandra bash /usr/sbin/start-seed.sh'
 ExecStop= /usr/bin/docker stop -t 3 %p
 
 [X-Fleet]
-X-Conflicts=rexster.service
-X-Conflicts=elasticsearch@*.service
+X-ConditionMachineOf=rexster.service
