@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-IP=`hostname --ip-address`
-/usr/bin/etcdctl --peers 172.17.42.1:4001 set /seed "$IP"
+IP=`/usr/bin/etcdctl --peers 172.17.42.1:4001 get /cassandraSeed/node1
 
 
 
