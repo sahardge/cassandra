@@ -7,10 +7,14 @@ Requires=CassandraSeed.service
 
 [Service]
 TimeoutStartSec=0
-ExecStartPre= /usr/bin/docker pull sahardge/cassandra
-ExecStart= /bin/bash -c "/usr/bin/docker start -d %p-%i || \
-           /usr/bin/docker run -d --name %p-%i sahardge/cassandra start-node.sh"
+ExecStartPre= /usr/bin/docker pull 160.91.76.121:5000/cassandra
+ExecStart= /bin/bash -c "/usr/bin/docker start -a %p-%i || \
+           /usr/bin/docker run -d --net=host --name %p-%i -v /mountedvol:/mountedvol 160.91.76.121:5000/cassandra start-node.sh"
 ExecStop= /usr/bin/docker stop -t %p-%i
 
 [X-Fleet]
 X-Conflicts=cassnode@*.service 
+X-Conflicts=CassandraSeed.Service
+X-Conflicts=rexster.service
+X-Conflicts=titan.service
+X-Conflicts=elasticsearch.service
