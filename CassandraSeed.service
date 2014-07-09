@@ -19,3 +19,4 @@ ExecStop= /usr/bin/docker stop -t 3 %p
 X-Conflicts=rexster.service
 X-Conflicts=titan.service
 X-Conflicts=cassnode@*.service
+X-Conflicts=elasticsearch.service
