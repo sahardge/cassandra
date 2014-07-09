@@ -6,7 +6,9 @@ Requires=CassandraSeed.service
 
 
 [Service]
+EnvironmentFile=/etc/environment
 TimeoutStartSec=0
+ExecStartPre= /usr/bin/etcdctl set /cassandraNode/node1 "$COREOS_PUBLIC_IPV4"
 ExecStartPre= /usr/bin/docker pull 160.91.76.121:5000/cassandra
 ExecStart= /bin/bash -c "/usr/bin/docker start -a %p-%i || \
            /usr/bin/docker run -d --net=host --name %p-%i -v /mountedvol:/mountedvol 160.91.76.121:5000/cassandra start-node.sh"
