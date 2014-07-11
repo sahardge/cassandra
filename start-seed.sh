@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-IP=`/usr/bin/etcdctl --peers 172.17.42.1:4001 get /cassandraSeed/node1
+IP=`/usr/bin/etcdctl --peers 172.17.42.1:4001 get /cassandraSeed/node1`
 
 
 
