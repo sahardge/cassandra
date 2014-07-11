@@ -12,6 +12,8 @@ ENV PATH /usr/local/go/bin:$PATH
 #Make Persisted host directory
 RUN mkdir /mountedvol     
 
+WORKDIR /local/git/cassandra
+
 
 EXPOSE 9160 9142 7000 7001 4001
 
